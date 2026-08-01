@@ -132,7 +132,7 @@ window.CAREER_DATA = {
     {id:'m1',action:'make',title:'종이 모형으로 아이디어 구현',time:'1주',mode:'개인',place:'자율시간',device:'불필요',cost:'0원',output:'제작물',needsPeople:false,steps:['해결할 불편 하나 선택','종이·재활용품으로 모형 제작','사용 장면을 가정해 문제 찾기','1회 수정'],complete:'초안 모형 + 문제 발견 + 수정',fallback:'스케치와 사용 시나리오로 대체'}
   ],
   config:{
-    version:'3.0.0',
+    version:'3.3.0',
     keywordPath:'./keyword.html',
     inactivityMinutes:15,
     maxSubjects:3,
