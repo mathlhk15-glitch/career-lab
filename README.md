@@ -1,4 +1,4 @@
-# 나의 경험에서 시작하는 진로 실험실 v2.1
+# 나의 경험에서 시작하는 진로 실험실 v3.0 통합판
 
 고등학교 1학년을 위한 API·서버 없는 정적 진로 탐색 프로그램입니다.
 
@@ -171,3 +171,50 @@ career-lab/
     ├── data.js
     └── app.js
 ```
+
+## v3.0 통합판: STEP 0~3 완결 구조
+
+이 저장소 하나에서 전체 학생 성장 흐름이 작동합니다.
+
+- `index.html` — STEP 0 경험 기반 진로 가설과 미니 실험
+- `keyword.html` — STEP 1 질문 씨앗을 탐구 질문으로 변환
+- `inquiry.html` — STEP 2 대상·자료·방법·검증을 포함한 탐구 설계
+- `roadmap.html` — STEP 3 고1·고2·고3 성장 로드맵
+
+연결 데이터는 같은 GitHub Pages 주소의 Web Storage를 사용합니다.
+
+- `careerLabBridgeV2`: 진로 실험실 → 질문 만들기
+- `careerLabKeywordV1`: 질문 만들기 → 탐구 설계
+- `careerLabInquiryV1`: 탐구 설계 → 성장 로드맵
+- `careerLabRoadmapV1`: 최종 성장 로드맵
+
+공용 기기 모드에서는 연결 자료도 `sessionStorage`에 저장되어 브라우저 세션 종료 시 사라집니다. 개인 기기 모드에서는 `localStorage`에 저장됩니다.
+
+## GitHub Pages 최종 파일 구조
+
+```text
+career-lab/
+├── index.html
+├── keyword.html
+├── inquiry.html
+├── roadmap.html
+├── README.md
+├── css/
+│   └── style.css
+└── js/
+    ├── data.js
+    ├── app.js
+    ├── flow-common.js
+    ├── keyword.js
+    ├── inquiry.js
+    └── roadmap.js
+```
+
+저장소 루트에 위 파일 구조를 그대로 올리면 다음 주소에서 작동합니다.
+
+`https://mathlhk15-glitch.github.io/career-lab/`
+
+
+## 휴대폰 GitHub 업로드용 평면 구조
+
+이 폴더는 하위 폴더 없이 모든 파일이 저장소 루트에 있습니다. 휴대폰 브라우저에서 파일 전체를 다중 선택해 업로드하기 위한 버전입니다.
