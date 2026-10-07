@@ -248,14 +248,14 @@ https://mathlhk15-glitch.github.io/career-lab/guide.html
 
 | 저장소 | 역할 |
 |---|---|
-| `growth-hub` | 통합 허브(“지금 무엇이 필요한가요?”) + 공통 **내 탐구노트** + 공통 기준 원본 |
+| `gyeongil-growth-hub` | 통합 허브(“지금 무엇이 필요한가요?”) + 공통 **내 탐구노트** + 공통 기준 원본 |
 | `career-lab` (이 저장소) | 🌱 발견과 개인 작업공간: 경험 → 진로 가설 → 첫 질문 → 설계 → 성장 로드맵 → 제출 |
 | `career-exploration-tool` | 🧭 전문 탐구 설계실: 분야·주제·과목·질문·방법·사례 |
 | `seteuk-guide` | 🛟 탐구 품질 도움서: 질문·근거·설문·상관/인과·수정·협업·AI·성찰 |
 
 ### 추가된 파일
-- `inquiry-standard.js` — 공통 탐구 기준(질문 수준 4단계, 질문 유형↔방법, 근거 5문항, 결론 범위, 성찰 틀, AI 원칙). **원본은 growth-hub**에 있고 이 파일은 복사본입니다. 첫 줄의 `INQUIRY STANDARD VERSION`이 네 저장소에서 같아야 합니다.
-- `inquiry-notes.js` — 공통 탐구노트 저장소(여러 탐구, `id`·`schemaVersion`·`createdAt`·`updatedAt`·`stage`, 덮어쓰기 방지, 파일 저장·불러오기). 원본은 growth-hub.
+- `inquiry-standard.js` — 공통 탐구 기준(질문 수준 4단계, 질문 유형↔방법, 근거 5문항, 결론 범위, 성찰 틀, AI 원칙). **원본은 gyeongil-growth-hub**에 있고 이 파일은 복사본입니다. 첫 줄의 `INQUIRY STANDARD VERSION`이 네 저장소에서 같아야 합니다.
+- `inquiry-notes.js` — 공통 탐구노트 저장소(여러 탐구, `id`·`schemaVersion`·`createdAt`·`updatedAt`·`stage`, 덮어쓰기 방지, 파일 저장·불러오기). 원본은 gyeongil-growth-hub.
 - `kyungil-link.js` — 이 저장소 전용 연결 코드. 기존 `app.js`·`keyword.js`·`inquiry.js` 등은 고치지 않았습니다.
 
 ### 연결 동작
