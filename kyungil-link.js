@@ -8,7 +8,7 @@
   if (!K || !N) return;
   var esc = K.esc, S = K.SITES;
   var page = (location.pathname.split('/').pop() || 'index.html').replace(/\?.*$/, '') || 'index.html';
-  var active = { 'index.html': 'discover', 'keyword.html': 'topic', 'inquiry.html': 'topic', 'roadmap.html': 'growth', 'submission.html': 'growth' }[page] || '';
+  var active = page === 'submission.html' ? 'notes' : 'start';
   var TARGET_KEY = 'kyungil.labTargetNote';
   K.mountNav(active, document.querySelector('header.topbar') || document.body.firstChild);
   N.migrate();
@@ -128,19 +128,19 @@
       '<p><a href="' + S.hub + 'notes.html">📓 내 탐구노트 열기 →</a></p>');
   }
 
-  /* STEP 4 최종 제출: 선생님께 보여드릴 활동 요약 */
+  /* STEP 4 자기평가서: 공통 탐구노트 내용을 제출용으로 정리 */
   if (page === 'submission.html') {
     var all = N.list();
-    var sp = panelAfterNav('<h2>📓 탐구노트 활동 요약</h2>' + (all.length ? '<div class="kis-row"><label class="sr-only" for="kisSum">요약할 탐구노트</label><select id="kisSum">' + all.map(function (n) { return '<option value="' + esc(n.id) + '">' + esc(N.title(n)) + '</option>'; }).join('') + '</select>' +
-      '<button type="button" class="kis-btn" id="kisCopy">활동 요약 복사</button></div><p class="kis-msg" id="kisCopyMsg" role="status"></p>' : '<p>아직 탐구노트가 없어요.</p>') +
+    var sp = panelAfterNav('<h2>📓 탐구활동 자기평가서</h2>' + (all.length ? '<div class="kis-row"><label class="sr-only" for="kisSum">자기평가할 탐구노트</label><select id="kisSum">' + all.map(function (n) { return '<option value="' + esc(n.id) + '">' + esc(N.title(n)) + '</option>'; }).join('') + '</select>' +
+      '<button type="button" class="kis-btn" id="kisCopy">자기평가서 복사</button></div><p class="kis-msg" id="kisCopyMsg" role="status"></p>' : '<p>아직 탐구노트가 없어요.</p>') +
       '<p>' + esc(K.SUMMARY_NOTICE) + '</p>');
     var cb = $('kisCopy');
     if (cb) cb.addEventListener('click', function () {
       var n = N.get($('kisSum').value); if (!n) return;
       var text = N.summary(n), m = $('kisCopyMsg');
-      if (window.FLOW && window.FLOW.copy) { window.FLOW.copy(text, '활동 요약을 복사했습니다.'); return; }
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { m.textContent = '복사했어요.'; }, function () { m.textContent = '복사하지 못했어요. 내 탐구노트의 활동 요약 탭에서 복사하세요.'; });
-      else m.textContent = '이 화면에서는 복사가 막혀 있어요. 내 탐구노트의 활동 요약 탭에서 복사하세요.';
+      if (window.FLOW && window.FLOW.copy) { window.FLOW.copy(text, '자기평가서를 복사했습니다.'); return; }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { m.textContent = '복사했어요.'; }, function () { m.textContent = '복사하지 못했어요. 내 탐구노트의 자기평가서 탭에서 복사하세요.'; });
+      else m.textContent = '이 화면에서는 복사가 막혀 있어요. 내 탐구노트의 자기평가서 탭에서 복사하세요.';
     });
   }
 })();
